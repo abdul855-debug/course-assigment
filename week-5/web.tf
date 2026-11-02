@@ -29,7 +29,7 @@ resource "kubernetes_deployment_v1" "web" {
           image_pull_policy = "IfNotPresent"
 
           security_context {
-            allow_privilege_escalation = false
+            allow_privilege_escalation = true
 
             capabilities {
               drop = ["ALL"]
