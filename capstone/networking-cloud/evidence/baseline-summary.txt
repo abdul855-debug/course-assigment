@@ -1,0 +1,17 @@
+Week 11 Baseline Results
+
+Test duration: 60 seconds (configured)
+Virtual users: 5
+Total requests: 300
+Request rate: 4.933 requests/sec
+Average latency: 9.59 ms
+P95 latency: 24.93 ms
+Failure rate: 0.00%
+Web replicas: 1
+Database replicas: 1
+Initial node memory usage: 2060Mi (60%)
+Future load test target: 15 requests/sec
+
+The application handled the baseline traffic without
+any failed requests. Higher traffic capacity has not
+been tested yet.

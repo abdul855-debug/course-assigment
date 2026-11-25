@@ -1,0 +1,51 @@
+Mon Nov  2 06:47:23 AM CST 2026
+NAME       STATUS   ROLES           AGE   VERSION        INTERNAL-IP   EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION             CONTAINER-RUNTIME
+inet4031   Ready    control-plane   28d   v1.36.5+k3s1   10.0.2.15     <none>        Ubuntu 26.04.1 LTS   7.0.0-31-generic (arm64)   containerd://2.3.4-k3s1.36
+NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/db            1/1     1            1           21d
+deployment.apps/db-exporter   1/1     1            1           62m
+deployment.apps/web           1/1     1            1           21d
+
+NAME                  TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+service/db            ClusterIP   10.43.181.227   <none>        5432/TCP   21d
+service/db-exporter   ClusterIP   10.43.13.73     <none>        9187/TCP   62m
+service/kubernetes    ClusterIP   10.43.0.1       <none>        443/TCP    28d
+service/web           ClusterIP   10.43.130.29    <none>        8080/TCP   21d
+
+NAME                               READY   STATUS    RESTARTS   AGE
+pod/db-cd464c66f-npvzn             1/1     Running   0          6h41m
+pod/db-exporter-5bd684db7b-2rkwr   1/1     Running   0          62m
+pod/web-7bdd8b76cf-vqgkm           1/1     Running   0          6h41m
+NAME                           READY   STATUS    RESTARTS   AGE     IP           NODE       NOMINATED NODE   READINESS GATES
+db-cd464c66f-npvzn             1/1     Running   0          6h41m   10.42.0.26   inet4031   <none>           <none>
+db-exporter-5bd684db7b-2rkwr   1/1     Running   0          62m     10.42.0.28   inet4031   <none>           <none>
+web-7bdd8b76cf-vqgkm           1/1     Running   0          6h41m   10.42.0.27   inet4031   <none>           <none>
+NAME         POD-SELECTOR   AGE
+db-clients   app=db         62m
+NAME                                             READY   STATUS    RESTARTS       AGE
+prometheus-kube-state-metrics-86f6b846bf-vwlzj   1/1     Running   1 (3h5m ago)   20d
+prometheus-prometheus-node-exporter-f9t4q        1/1     Running   6 (163m ago)   20d
+prometheus-server-6944b769c9-2t5s9               2/2     Running   3 (163m ago)   20d
+200
+NAME       CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+inet4031   468m         23%      2176Mi          64%         
+NAMESPACE     NAME                                             CPU(cores)   MEMORY(bytes)   
+default       db-cd464c66f-npvzn                               32m          33Mi            
+default       db-exporter-5bd684db7b-2rkwr                     10m          18Mi            
+default       web-7bdd8b76cf-vqgkm                             12m          27Mi            
+kube-system   coredns-7cfb7bc9c7-6v4x8                         7m           25Mi            
+kube-system   local-path-provisioner-77b9867795-whnv8          1m           15Mi            
+kube-system   metrics-server-6dc596dfb8-dl9qg                  21m          40Mi            
+kube-system   svclb-traefik-2cb5e8b5-zkv5d                     0m           0Mi             
+kube-system   traefik-7c8544f77-v972n                          9m           25Mi            
+monitoring    prometheus-kube-state-metrics-86f6b846bf-vwlzj   11m          28Mi            
+monitoring    prometheus-prometheus-node-exporter-f9t4q        3m           15Mi            
+monitoring    prometheus-server-6944b769c9-2t5s9               13m          116Mi           
+               total        used        free      shared  buff/cache   available
+Mem:           3.3Gi       2.2Gi       112Mi       104Mi       1.2Gi       1.1Gi
+Swap:          3.8Gi       1.5Gi       2.3Gi
+
+For more information on running Prometheus, visit:
+https://prometheus.io/
+2026-11-02 00:06:35 deployed 85fd98b
+2026-11-02 00:08:02 up to date at 85fd98b
